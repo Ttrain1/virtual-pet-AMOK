@@ -8,7 +8,7 @@ public class RobotTest {
 	@Test
 	public void shouldAddOil( ) {
 		Robot underTest = new Robot(null, null, 0, 0, false, 0, false);
-		underTest.shouldAddOil();
+		underTest.maintainRobot();
 		int result = underTest.getOilLevel();
 		Assert.assertEquals(100, result);
 
