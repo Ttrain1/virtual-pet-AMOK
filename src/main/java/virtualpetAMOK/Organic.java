@@ -1,0 +1,32 @@
+package virtualpetAMOK;
+
+public class Organic extends Pet {
+	int hungerLevel = 20;
+	int thirstLevel = 20;
+	
+	public int feedPet() {
+		hungerLevel -= 10;
+		return getHungerLevel();
+	}
+
+	public int getHungerLevel() {
+		return hungerLevel;
+	}
+
+	public void setHungerLevel(int hungerLevel) {
+		this.hungerLevel = hungerLevel;
+	}
+
+	public int getThirstLevel() {
+		return thirstLevel;
+	}
+
+	public void setThirstLevel(int thirstLevel) {
+		this.thirstLevel = thirstLevel;
+	}
+
+	public void hydratePet() {
+		thirstLevel -= 20;
+	}
+
+}
