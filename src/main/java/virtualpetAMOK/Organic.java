@@ -4,6 +4,12 @@ public class Organic extends Pet {
 	int hungerLevel = 20;
 	int thirstLevel = 20;
 	
+	public Organic(String name, String description, int happiness, int health, boolean alive, int hungerLevel, int thirstLevel  ) {
+		super(name, description, happiness, health, alive);
+		this.hungerLevel=hungerLevel;
+		this.thirstLevel=thirstLevel;
+	}
+
 	public int feedPet() {
 		hungerLevel -= 10;
 		return getHungerLevel();

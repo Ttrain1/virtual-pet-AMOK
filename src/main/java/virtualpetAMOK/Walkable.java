@@ -2,6 +2,6 @@ package virtualpetAMOK;
 
 public interface Walkable {
 
-	void walkDog();
+	void walk();
 
 }

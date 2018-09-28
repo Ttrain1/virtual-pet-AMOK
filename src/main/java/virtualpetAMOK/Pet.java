@@ -7,9 +7,24 @@ public class Pet {
 	int happiness;
 	int health;
 	boolean alive;
+	
+	
+public Pet(String name, String description, int happiness, int health, boolean alive) {
+		this.name = name;
+		this.description = description;
+		this.happiness = happiness;
+		this.health = health;
+		this.alive = alive;
+	}
 
+	
 	public String getName() {
 		return name;
+	}
+
+
+	public void setAlive(boolean alive) {
+		this.alive = alive;
 	}
 
 	public String getDescription() {
@@ -29,9 +44,9 @@ public class Pet {
 	}
 
 
-
-	public Pet() {
-		super();
+	public void play() {
+		happiness += 20;
+		
 	}
 
 }
