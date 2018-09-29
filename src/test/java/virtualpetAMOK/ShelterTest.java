@@ -60,11 +60,30 @@ public class ShelterTest {
 
 	}
 	@Test
+	//* THIS TEST WAS NOT WORKING AS OF FRIDAY
 	public void shouldWalkRobots () {
 		Shelter underTest = new Shelter();
 		Robot nick = new Robot("", "", 0, 1, true, 100, false);
 		underTest.addPet(nick);
 		underTest.walkDogs();
 		Assert.assertEquals(20, (nick).getHappiness());
+	}
+	@Test
+	//*  TEST IS NOT WORKING - Its simply passing back the parm initialized value of oillevel 
+	public void shouldTickPetsRobot () {
+		Shelter underTest = new Shelter();
+		Pet nick = new Robot("", "", 0, 1, true, 100, false);
+		underTest.tickPets();
+		Assert.assertEquals(0, ((Robot) nick).getOilLevel());
+		
+	}
+	@Test
+	//*  started test
+	public void shouldTrackStatus () {
+		Shelter underTest = new Shelter();
+		Pet nick = new Robot("", "", 0, 1, true, 100, false);
+		underTest.trackStatus();
+	//*	Assert.assertEquals(0, ((Robot) nick).getOilLevel());
+		
 	}
 }

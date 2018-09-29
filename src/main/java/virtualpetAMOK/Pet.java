@@ -2,12 +2,16 @@ package virtualpetAMOK;
 
 public class Pet {
 
-	String name;
-	String description;
+	private String name;
+	private String description;
 	int happiness;
-	int health;
-	boolean alive;
-	
+	private int health;
+	private boolean alive;
+
+public Pet(String name, String description) {
+		this.name = name;
+		this.description = description;
+	}	
 	
 public Pet(String name, String description, int happiness, int health, boolean alive) {
 		this.name = name;
@@ -50,3 +54,6 @@ public Pet(String name, String description, int happiness, int health, boolean a
 	}
 
 }
+
+ 
+

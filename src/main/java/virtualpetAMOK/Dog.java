@@ -2,8 +2,8 @@ package virtualpetAMOK;
 
 public class Dog extends Organic implements Walkable {
 
-	int cageWaste = 2;
-	int wasteChance = 0;
+	private int cageWaste = 2;
+	private int wasteChance = 0;
 	
 	public Dog(String name, String description, int happiness, int health, boolean alive, int hungerLevel,
 			int thirstLevel, int cageWaste ) {
@@ -26,13 +26,8 @@ public class Dog extends Organic implements Walkable {
 		happiness += 10;
 		wasteChance -= 2;
 	
-	
-	}
+		}
 
-
-	public int getCageWaste() {
-		return cageWaste;
-	}
 
 	public int getHappiness() {
 		return happiness;
@@ -40,6 +35,18 @@ public class Dog extends Organic implements Walkable {
 
 	public int getWasteProductionChance() {
 		return wasteChance;
+	}
+
+
+
+	public void dogTick() {
+		cageWaste ++;
+		wasteChance ++;
+				
+	}
+
+	public int getCageWasteStatus() {
+			return cageWaste;
 	}
 
 }

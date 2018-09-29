@@ -35,4 +35,9 @@ public class Robot extends Pet implements Walkable {
 		oilLevel = 100;
 
 	}
+
+	public void tickRobot() {
+		oilLevel -= 5;
+		
+	}
 }
