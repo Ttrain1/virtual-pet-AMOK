@@ -1,6 +1,6 @@
 package virtualpetAMOK;
 
-public class Dog extends Organic implements Walkable {
+public class Dog extends Organic implements Walkable, Healthier {
 
 	private int cageWaste = 2;
 	private int wasteChance = 0;
@@ -47,6 +47,14 @@ public class Dog extends Organic implements Walkable {
 
 	public int getCageWasteStatus() {
 			return cageWaste;
+	}
+
+
+
+	@Override
+	public void raiseHP() {
+		
+		
 	}
 
 }

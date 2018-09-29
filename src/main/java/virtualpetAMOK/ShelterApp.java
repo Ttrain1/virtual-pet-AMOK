@@ -42,7 +42,6 @@ public class ShelterApp {
 }
 //*
 //*   Functionality needed:
-//*     - user-interface w/ fame loop
 //*		- Call Shelter tick() method after every loop interation
 //*     - User options to include (from last project:
 //*			- Feed All Pets - Organic and Robot
@@ -57,6 +56,8 @@ public class ShelterApp {
 //*			- Clean all dog cages
 //*			- Clean the litterbox 
 //*			- Oil all robotic pets
+//*
+//*      Also print list of status for all pets
 //*
 //*
 //*

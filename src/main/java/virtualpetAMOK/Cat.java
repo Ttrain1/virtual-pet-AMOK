@@ -1,28 +1,24 @@
 package virtualpetAMOK;
 
-public class Cat extends Organic {
+public class Cat extends Organic implements Healthier {
 
-	private int litterBoxPoopValue =0;
+	private  int catPoopValue = 1;
 	
 	public Cat(String name, String description, int happiness, int health, boolean alive, int hungerLevel,
-			int thirstLevel , int litterBoxPoopValue) {
+			int thirstLevel ,  int litterBoxPoopValue) {
 		super(name, description, happiness, health, alive, hungerLevel, thirstLevel);
-		this.litterBoxPoopValue=litterBoxPoopValue;
+		this.catPoopValue=litterBoxPoopValue;
 	}
 
 	
 
-	public int cleanLitterBox() {
-		// TODO Auto-generated method stub
-		return litterBoxPoopValue = 0;
-	}
 
-	public int getLitterBoxPoopValue() {
-		return litterBoxPoopValue;
+	public int getCatPoopValue() {
+		return catPoopValue;
 	}
 
 	public void catTick() {
-		litterBoxPoopValue ++;
+	getCatPoopValue();
 		
 	} 
 	

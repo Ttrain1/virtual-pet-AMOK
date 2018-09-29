@@ -1,6 +1,6 @@
 package virtualpetAMOK;
 
-public class Organic extends Pet {
+public class Organic extends Pet implements Healthier {
 	int hungerLevel = 20;
 	int thirstLevel = 20;
 	
@@ -33,6 +33,11 @@ public class Organic extends Pet {
 
 	public void hydratePet() {
 		thirstLevel -= 20;
+	}
+
+	@Override
+	public void raiseHP() {
+		health +=(hungerLevel*1.25)+(thirstLevel*1.25)+(happiness/10) ;
 	}
 
 }

@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.not;
 public class ShelterTest {
 	@Test
 	public void shouldAddPet( ) {
-		Shelter underTest = new Shelter();
+		Shelter underTest = new Shelter(0);
 		Pet nick = new Pet(null, null, 0, 0, false);
 		underTest.addPet(nick);
 		
@@ -18,7 +18,7 @@ public class ShelterTest {
 	}
 	@Test
 	public void shouldRemovePet( ) {
-		Shelter underTest = new Shelter();
+		Shelter underTest = new Shelter(0);
 		Pet nick = new Pet(null, null, 0, 0, false);
 		String name = nick.getName();
 		underTest.addPet(nick);
@@ -30,7 +30,7 @@ public class ShelterTest {
 	@Test
 	
 	public void changePetVariableValue () {
-		Shelter underTest = new Shelter();
+		Shelter underTest = new Shelter(0);
 		Dog nick = new Dog("", "cat", 20, 100, false, 20, 0, 0);
 		underTest.addPet(nick);
 		underTest.feedOrganicPets();
@@ -41,8 +41,8 @@ public class ShelterTest {
 	@Test
 	
 	public void changePetVariableOilLevel () {
-		Shelter underTest = new Shelter();
-		Robot nick = new Robot("", "", 100, 100, true, 50, true);
+		Shelter underTest = new Shelter(0);
+		Robot nick = new Robot("", "", 0, 0, true, 100, "");
 		underTest.addPet(nick);
 		underTest.oilRobots();
 		
@@ -52,7 +52,7 @@ public class ShelterTest {
 	@Test
 	
 	public void shouldWalkDogs () {
-		Shelter underTest = new Shelter();
+		Shelter underTest = new Shelter(0);
 		Dog nick = new Dog("", "", 100, 80, true, 100, 100, 0);
 		underTest.addPet(nick);
 		underTest.walkDogs();
@@ -62,28 +62,50 @@ public class ShelterTest {
 	@Test
 	//* THIS TEST WAS NOT WORKING AS OF FRIDAY
 	public void shouldWalkRobots () {
-		Shelter underTest = new Shelter();
-		Robot nick = new Robot("", "", 0, 1, true, 100, false);
+		Shelter underTest = new Shelter(0);
+		Robot nick = new Robot("", "", 0, 0, true, 100, "Cat");
 		underTest.addPet(nick);
 		underTest.walkDogs();
 		Assert.assertEquals(20, (nick).getHappiness());
 	}
 	@Test
-	//*  TEST IS NOT WORKING - Its simply passing back the parm initialized value of oillevel 
-	public void shouldTickPetsRobot () {
-		Shelter underTest = new Shelter();
-		Pet nick = new Robot("", "", 0, 1, true, 100, false);
+
+	public void shouldTickPetsCat () {
+		Shelter underTest = new Shelter(0);
+		Pet eachPet = new Cat(null, null, 0, 0, false, 0, 0, 0);
+		underTest.addPet(eachPet);
 		underTest.tickPets();
-		Assert.assertEquals(0, ((Robot) nick).getOilLevel());
+		Assert.assertEquals(1, ((Cat) eachPet).getLitterBoxPoopValue());
 		
 	}
 	@Test
-	//*  started test
-	public void shouldTrackStatus () {
-		Shelter underTest = new Shelter();
-		Pet nick = new Robot("", "", 0, 1, true, 100, false);
-		underTest.trackStatus();
-	//*	Assert.assertEquals(0, ((Robot) nick).getOilLevel());
+	
+	public void shouldTickPetsRobot () {
+		Shelter underTest = new Shelter(0);
+		Robot nick = new Robot("", "", 0, 0, true, 100, "");
+		underTest.addPet(nick);
+		underTest.tickPets();
+		Assert.assertEquals(95, ((Robot) nick).getOilLevel());
+		
+	}
+	@Test
+	
+	public void shouldCleanLitterBox () {
+		Shelter underTest = new Shelter(130);
+		underTest.litterBox = 10;
+		underTest.cleanLitterBox();
+		int result = underTest.getLitterBox();
+		Assert.assertEquals(0, result);
+		
+	}
+	@Test
+	
+	public void cageWasteShouldBeZero() {
+		Shelter underTest = new Shelter(0);
+		Dog testPet = new Dog("", "", 0, 0, true, 0, 0, 10);
+		underTest.addPet(testPet);
+		underTest.cleanDogCage();
+		Assert.assertEquals(0, testPet.getWasteProductionChance());
 		
 	}
 }

@@ -1,11 +1,11 @@
 package virtualpetAMOK;
 
-public class Pet {
+public class Pet  {
 
 	private String name;
 	private String description;
 	int happiness;
-	private int health;
+	public int health;
 	private boolean alive;
 
 public Pet(String name, String description) {
@@ -38,6 +38,7 @@ public Pet(String name, String description, int happiness, int health, boolean a
 	public int getHappiness() {
 		return happiness;
 	}
+	
 
 	public int getHealth() {
 		return health;
