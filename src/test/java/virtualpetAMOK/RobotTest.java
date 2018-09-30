@@ -16,9 +16,9 @@ public class RobotTest {
 
 	@Test
 	public void isADog() {
-		Robot underTest = new Robot("", "", 0, 0, true, 100, "");
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "Dog");
 		String result = underTest.animalType;
-		Assert.assertEquals("dog", result);
+		Assert.assertEquals("Dog", result);
 	}
 	
 	@Test
@@ -28,5 +28,12 @@ public class RobotTest {
 		underTest.tickRobot();
 		int result = underTest.getOilLevel();
 		Assert.assertEquals(95, result);
+	}
+	@Test
+	public void dontWalkRobotCat() {
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "Dog");
+		underTest.walk();
+		Assert.assertEquals(20, underTest.happiness);
+
 	}
 }

@@ -54,6 +54,26 @@ public Pet(String name, String description, int happiness, int health, boolean a
 		
 	}
 
+	public boolean getAlive() {
+			return alive;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
 }
 
  

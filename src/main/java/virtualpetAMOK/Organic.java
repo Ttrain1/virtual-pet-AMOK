@@ -1,13 +1,14 @@
 package virtualpetAMOK;
 
-public class Organic extends Pet implements Healthier {
+public class Organic extends Pet {
 	int hungerLevel = 20;
 	int thirstLevel = 20;
-	
-	public Organic(String name, String description, int happiness, int health, boolean alive, int hungerLevel, int thirstLevel  ) {
+
+	public Organic(String name, String description, int happiness, int health, boolean alive, int hungerLevel,
+			int thirstLevel) {
 		super(name, description, happiness, health, alive);
-		this.hungerLevel=hungerLevel;
-		this.thirstLevel=thirstLevel;
+		this.hungerLevel = hungerLevel;
+		this.thirstLevel = thirstLevel;
 	}
 
 	public int feedPet() {
@@ -33,11 +34,6 @@ public class Organic extends Pet implements Healthier {
 
 	public void hydratePet() {
 		thirstLevel -= 20;
-	}
-
-	@Override
-	public void raiseHP() {
-		health +=(hungerLevel*1.25)+(thirstLevel*1.25)+(happiness/10) ;
 	}
 
 }

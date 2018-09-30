@@ -1,14 +1,22 @@
 package virtualpetAMOK;
 
-public class Robot extends Pet implements Walkable, Healthier {
+public class Robot extends Pet implements Walkable {
 
 	int oilLevel = 50;
-	String animalType ="dog";
+	String animalType;
 
 	public Robot(String name, String description, int happiness, int health, boolean alive, int oilLevel,
-		String animalTypeDog) {
+			String animalType) {
 		super(name, description, happiness, health, alive);
 		this.oilLevel = oilLevel;
+		this.animalType = animalType;
+	}
+
+	public void setOilLevel(int oilLevel) {
+		this.oilLevel = oilLevel;
+	}
+
+	public void setAnimalType(String animalType) {
 		this.animalType = animalType;
 	}
 
@@ -21,13 +29,15 @@ public class Robot extends Pet implements Walkable, Healthier {
 		return animalType;
 	}
 
-
 	@Override
 	public void walk() {
+		System.out.println(animalType);
 		if (animalType.equalsIgnoreCase("Dog")) {
 			happiness += 20;
-	}	if(animalType.equalsIgnoreCase("Cat")) {
-			happiness +=0;
+
+		}
+		if (animalType.equalsIgnoreCase("Cat")) {
+			happiness += 0;
 		}
 	}
 
@@ -38,12 +48,7 @@ public class Robot extends Pet implements Walkable, Healthier {
 
 	public void tickRobot() {
 		oilLevel -= 5;
-		
+
 	}
 
-	@Override
-	public void raiseHP() {
-		health += (oilLevel/10) + (happiness/10);
-		
-	}
 }
