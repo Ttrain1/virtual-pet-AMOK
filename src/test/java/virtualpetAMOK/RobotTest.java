@@ -7,7 +7,7 @@ public class RobotTest {
 
 	@Test
 	public void shouldAddOil() {
-		Robot underTest = new Robot(null, null, 0, 0, false, 0, false);
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "");
 		underTest.maintainRobot();
 		int result = underTest.getOilLevel();
 		Assert.assertEquals(100, result);
@@ -16,17 +16,24 @@ public class RobotTest {
 
 	@Test
 	public void isADog() {
-		Robot underTest = new Robot(null, null, 0, 0, false, 0, true);
-		boolean result = underTest.animalTypeDog;
-		Assert.assertEquals(true, result);
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "Dog");
+		String result = underTest.animalType;
+		Assert.assertEquals("Dog", result);
 	}
 	
 	@Test
 	public void robotTick() {
-		Robot underTest = new Robot(null, null, 0, 0, false, 0, true);
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "");
 		underTest.maintainRobot();
 		underTest.tickRobot();
 		int result = underTest.getOilLevel();
 		Assert.assertEquals(95, result);
+	}
+	@Test
+	public void dontWalkRobotCat() {
+		Robot underTest = new Robot("", "", 0, 0, true, 100, "Dog");
+		underTest.walk();
+		Assert.assertEquals(20, underTest.happiness);
+
 	}
 }
